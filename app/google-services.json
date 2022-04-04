@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "784127962891",
+    "project_id": "fir-android-dec2c",
+    "storage_bucket": "fir-android-dec2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784127962891:android:f7725b91454a597bd57c0e",
+        "android_client_info": {
+          "package_name": "com.thecodework.firebaseandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784127962891-ddarlj5kk7qlvvurt6g1v00s92rgp204.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDni4vycH-WlnKtwD3SHxEbgIFI9QbOV4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784127962891-ddarlj5kk7qlvvurt6g1v00s92rgp204.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
