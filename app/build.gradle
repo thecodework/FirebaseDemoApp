@@ -65,4 +65,10 @@ dependencies {
     //FirebaseCloudStorage
     implementation platform('com.google.firebase:firebase-bom:29.3.0')
     implementation 'com.google.firebase:firebase-storage-ktx'
+    //Firebase CloudMessaging
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
 }
+    apply plugin: 'com.google.gms.google-services'
