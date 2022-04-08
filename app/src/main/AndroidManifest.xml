@@ -3,10 +3,15 @@
     package="com.thecodework.firebaseandroid">
 
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <permission
         android:name="au.com.myapp.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="au.com.myapp.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +19,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAndroid">
+        <activity android:name=".ui.VerifyOtp_Activity"></activity>
+        <activity
+            android:name=".ui.SendOtp_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/yoga" />
@@ -26,22 +42,19 @@
         <meta-data
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
+
         <activity
             android:name=".ui.CloudMessaging_Activity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".ui.ShowFirestore_Activity" />
         <activity
             android:name=".ui.FirestoreActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".ui.ShowActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.RegisterActivity" />

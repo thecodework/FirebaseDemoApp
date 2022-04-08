@@ -51,7 +51,10 @@ dependencies {
     //FirebaseAnalytics
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    //Firebase Authintication
+    //Firebase Authintication using email
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    //Firebase Authentication using phone number
     implementation platform('com.google.firebase:firebase-bom:29.3.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
     //Firebase database
@@ -71,4 +74,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
 }
-    apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
