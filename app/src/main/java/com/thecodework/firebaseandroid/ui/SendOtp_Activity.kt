@@ -38,7 +38,6 @@ class SendOtp_Activity : AppCompatActivity() {
         binding.btnSendotp.setOnClickListener {
             login()
         }
-
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
