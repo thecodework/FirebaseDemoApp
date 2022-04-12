@@ -3,8 +3,8 @@
     package="com.thecodework.firebaseandroid">
 
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
         android:name="au.com.myapp.permission.C2D_MESSAGE"
@@ -19,16 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAndroid">
-        <activity android:name=".ui.VerifyOtp_Activity"></activity>
+        <activity
+            android:name=".ui.ForgetPass_Activity"
+            android:exported="true"></activity>
+        <activity android:name=".ui.VerifyOtp_Activity" />
         <activity
             android:name=".ui.SendOtp_Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -45,12 +42,16 @@
 
         <activity
             android:name=".ui.CloudMessaging_Activity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.ShowFirestore_Activity" />
         <activity
             android:name=".ui.FirestoreActivity"

@@ -2,6 +2,7 @@ package com.thecodework.firebaseandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
                 userLogin(emailid, pass)
             }
         }
+        binding.tvForgetPass.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, ForgetPass_Activity::class.java))
+        })
     }
 
     private fun userLogin(emailid: String, pass: String) {
