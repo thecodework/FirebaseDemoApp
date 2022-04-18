@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_background"
+    android:background="@color/black"
     tools:context="ui.FirestoreActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -26,8 +26,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/space_12"
                 android:fontFamily="@font/semibold"
-                android:text="Welcome"
-                android:textColor="@color/blue"
+                android:text="Teacher Details"
+                android:textColor="@color/yellow"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:transitionName="welcome" />
@@ -35,61 +35,144 @@
             <soup.neumorphism.NeumorphCardView
                 style="@style/Widget.Neumorph.CardView"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/space_12"
+                android:padding="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+                app:neumorph_inset="12dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+                app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+                app:neumorph_shadowElevation="5dp"
                 app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/edName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nobackground"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/semibold"
                     android:hint="Name"
-                    android:inputType="textEmailAddress"
-                    android:paddingLeft="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColorHint="@color/blue"
-                    android:textCursorDrawable="@drawable/cursor" />
+                    android:singleLine="true"
+                    android:textColor="@color/yellow"
+                    android:textColorHint="@color/yellow" />
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 style="@style/Widget.Neumorph.CardView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/space_72"
-                android:layout_marginStart="@dimen/space_16"
-                android:layout_marginTop="@dimen/space_8"
-                android:layout_marginEnd="@dimen/space_16"
+                android:layout_height="80dp"
+                android:padding="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+                app:neumorph_inset="12dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+                app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeType="pressed">
+
+                <EditText
+                    android:id="@+id/edEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/semibold"
+                    android:hint="Email"
+                    android:singleLine="true"
+                    android:textColor="@color/yellow"
+                    android:textColorHint="@color/yellow" />
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardView"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:padding="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+                app:neumorph_inset="12dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+                app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeType="pressed">
+
+                <EditText
+                    android:id="@+id/edAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/nobackground"
+                    android:fontFamily="@font/semibold"
+                    android:hint="Address"
+                    android:inputType="text"
+                    android:padding="1dp"
+                    android:textColor="@color/yellow"
+                    android:textColorHint="@color/yellow" />
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:padding="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+                app:neumorph_inset="12dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+                app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+                app:neumorph_shadowElevation="5dp"
                 app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/edNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nobackground"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/semibold"
                     android:hint="Phone Number"
                     android:inputType="number"
-                    android:paddingLeft="@dimen/space_12"
-                    android:paddingEnd="@dimen/space_12"
-                    android:textColorHint="@color/blue"
-                    android:textCursorDrawable="@drawable/cursor" />
+                    android:singleLine="true"
+                    android:textColor="@color/yellow"
+                    android:textColorHint="@color/yellow" />
             </soup.neumorphism.NeumorphCardView>
 
-            <soup.neumorphism.NeumorphButton
+
+            <soup.neumorphism.NeumorphCardView
                 android:id="@+id/btnSave"
-                style="@style/Widget.Neumorph.Button"
+                style="@style/Widget.Neumorph.CardView"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="@dimen/space_16"
-                android:layout_marginTop="@dimen/space_16"
-                android:layout_marginEnd="@dimen/space_16"
-                android:fontFamily="@font/semibold"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="@color/blue"
-                android:textSize="16sp"
-                app:neumorph_shapeType="flat" />
+                android:layout_height="@dimen/space_72"
+                android:padding="@dimen/space_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:neumorph_backgroundColor="@color/yellow"
+                app:neumorph_inset="@dimen/space_12"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="@color/deep_yellow"
+                app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+                app:neumorph_shadowElevation="@dimen/space_4"
+                app:neumorph_shapeType="flat">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </soup.neumorphism.NeumorphCardView>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -97,8 +180,8 @@
     <ImageView
         android:id="@+id/imgBottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/background_bottom"
+        android:layout_height="@dimen/space_200"
+        android:src="@drawable/phonelogin"
         android:transitionName="imgTree"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

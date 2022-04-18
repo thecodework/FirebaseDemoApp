@@ -10,10 +10,10 @@
     <ImageView
         android:id="@+id/imgBottom"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_200"
+        android:layout_height="@dimen/space_300"
         android:layout_marginTop="@dimen/space_20"
         android:scaleType="fitXY"
-        android:src="@drawable/loginback"
+        android:src="@drawable/splash"
         android:transitionName="imgTree"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

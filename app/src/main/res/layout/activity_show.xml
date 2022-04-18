@@ -3,27 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/light_background"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.ShowActivity">
 
-    <soup.neumorphism.NeumorphButton
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/btnShow"
-        style="@style/Widget.Neumorph.Button"
+        style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_40"
-        android:layout_marginEnd="@dimen/space_16"
-        android:fontFamily="@font/semibold"
-        android:text="Show"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="@dimen/space_72"
+        android:layout_marginTop="@dimen/space_20"
+        android:padding="@dimen/space_24"
         app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_shapeType="flat" />
+        app:neumorph_backgroundColor="@color/yellow"
+        app:neumorph_inset="@dimen/space_12"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/deep_yellow"
+        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+        app:neumorph_shadowElevation="@dimen/space_4"
+        app:neumorph_shapeType="flat">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Show"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </soup.neumorphism.NeumorphCardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"
