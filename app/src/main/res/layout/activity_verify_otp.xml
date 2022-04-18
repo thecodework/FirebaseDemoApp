@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical"
-    android:background="@color/light_background"
     tools:context=".ui.VerifyOtp_Activity">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/space_12"
         android:fontFamily="@font/semibold"
         android:text="Verification"
-        android:textColor="@color/blue"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
         android:transitionName="welcome" />
@@ -24,37 +24,55 @@
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_72"
-        android:layout_marginStart="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_32"
-        android:layout_marginEnd="@dimen/space_16"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/space_20"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+        app:neumorph_inset="12dp"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+        app:neumorph_shadowElevation="5dp"
         app:neumorph_shapeType="pressed">
 
         <EditText
             android:id="@+id/edotp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/nobackground"
+            android:layout_marginStart="@dimen/space_12"
+            android:layout_marginEnd="@dimen/space_12"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/semibold"
             android:hint="Enter OTP"
-            android:inputType="number"
-            android:paddingLeft="@dimen/space_12"
-            android:paddingEnd="@dimen/space_12"
-            android:textColorHint="@color/blue"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:singleLine="true"
+            android:textColor="@color/yellow"
+            android:textColorHint="@color/yellow" />
     </soup.neumorphism.NeumorphCardView>
 
-    <soup.neumorphism.NeumorphButton
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/btnVerify"
-        style="@style/Widget.Neumorph.Button"
+        style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_16"
-        android:layout_marginEnd="@dimen/space_16"
-        android:fontFamily="@font/semibold"
-        android:text="Verify"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:neumorph_shapeType="flat" />
+        android:layout_height="@dimen/space_72"
+        android:padding="@dimen/space_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:neumorph_backgroundColor="@color/yellow"
+        app:neumorph_inset="@dimen/space_12"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/deep_yellow"
+        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+        app:neumorph_shadowElevation="@dimen/space_4"
+        app:neumorph_shapeType="flat">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Verify"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </soup.neumorphism.NeumorphCardView>
 </LinearLayout>

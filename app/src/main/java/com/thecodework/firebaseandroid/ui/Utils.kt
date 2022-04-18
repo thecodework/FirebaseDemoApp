@@ -2,6 +2,7 @@ package com.thecodework.firebaseandroid.ui
 
 import android.app.Activity
 import android.os.Build
+import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 

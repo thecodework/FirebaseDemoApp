@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivitySendOtpBinding
 import java.util.concurrent.TimeUnit
 
@@ -32,6 +33,7 @@ class SendOtp_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
+        Utils.changeStatusBar(this@SendOtp_Activity, R.color.dark_color_shadow_light)
     }
 
     private fun setClickListener() {

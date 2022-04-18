@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun initializer() {
-        Utils.changeStatusBar(this@RegisterActivity, R.color.light_background)
+        Utils.changeStatusBar(this@RegisterActivity, R.color.dark_color_shadow_light)
         auth = FirebaseAuth.getInstance()
     }
 
@@ -34,7 +34,6 @@ class RegisterActivity : AppCompatActivity() {
     private fun setClickListener() {
         binding.tvLogin.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
-            Toast.makeText(this, "welcome", Toast.LENGTH_LONG).show()
         })
         binding.btnRegister.setOnClickListener(View.OnClickListener {
             Log.d("TAG", "enter field")

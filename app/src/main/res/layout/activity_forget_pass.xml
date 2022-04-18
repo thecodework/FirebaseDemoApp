@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_background"
+    android:background="@color/lowblue"
     android:orientation="vertical"
     tools:context=".ui.ForgetPass_Activity">
 
@@ -24,37 +24,56 @@
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/space_20"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:neumorph_backgroundColor="@color/lightbule"
+        app:neumorph_inset="12dp"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/blue"
+        app:neumorph_shadowColorLight="@color/lightbule"
+        app:neumorph_shadowElevation="5dp"
         app:neumorph_shapeType="pressed">
 
         <EditText
             android:id="@+id/edEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/nobackground"
+            android:layout_marginStart="@dimen/space_12"
+            android:layout_marginEnd="@dimen/space_12"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/semibold"
             android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
-            android:paddingEnd="10dp"
-            android:textColorHint="@color/blue"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
     </soup.neumorphism.NeumorphCardView>
 
-    <soup.neumorphism.NeumorphButton
+
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/btnSubmit"
-        style="@style/Widget.Neumorph.Button"
+        style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_16"
-        android:layout_marginEnd="@dimen/space_16"
-        android:fontFamily="@font/semibold"
-        android:text="Submit"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:neumorph_shapeType="flat" />
+        android:layout_height="@dimen/space_72"
+        android:padding="@dimen/space_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:neumorph_backgroundColor="@color/blue"
+        app:neumorph_inset="@dimen/space_12"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/blue"
+        app:neumorph_shadowColorLight="@color/lowblue"
+        app:neumorph_shadowElevation="@dimen/space_4"
+        app:neumorph_shapeType="flat">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </soup.neumorphism.NeumorphCardView>
 </LinearLayout>

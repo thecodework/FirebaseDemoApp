@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializer() {
-        Utils.changeStatusBar(this@MainActivity, R.color.light_background)
+        Utils.changeStatusBar(this@MainActivity, R.color.dark_color_shadow_light)
         auth = FirebaseAuth.getInstance()
     }
 
     private fun setClickListener() {
-        binding.tvRegister.setOnClickListener({
+        binding.tvRegister.setOnClickListener {
             startActivity(Intent(this@MainActivity, RegisterActivity::class.java))
-        })
+        }
         binding.btnLogin.setOnClickListener {
             emailid = binding.edEmail.text.toString()
             pass = binding.edPassword.text.toString()
@@ -48,17 +48,20 @@ class MainActivity : AppCompatActivity() {
         binding.tvForgetPass.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, ForgetPass_Activity::class.java))
         })
+        binding.tvPhone.setOnClickListener {
+            startActivity(Intent(this, SendOtp_Activity::class.java))
+        }
     }
 
     private fun userLogin(emailid: String, pass: String) {
         auth.signInWithEmailAndPassword(emailid, pass)
-            .addOnSuccessListener(this, {
+            .addOnSuccessListener(this) {
                 Toast.makeText(
                     this, "LoginSuccessful",
                     Toast.LENGTH_LONG
                 ).show()
                 startActivity(Intent(this, HomeActivity::class.java))
-            })
+            }
     }
 }
 

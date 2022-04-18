@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityVerifyOtpBinding
 
 class VerifyOtp_Activity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
+        Utils.changeStatusBar(this@VerifyOtp_Activity, R.color.dark_color_shadow_light)
 
     }
 

@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityForgetPassBinding
 
 class ForgetPass_Activity : AppCompatActivity() {
@@ -26,6 +27,7 @@ class ForgetPass_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
+        Utils.changeStatusBar(this@ForgetPass_Activity, R.color.lowblue)
     }
 
     private fun setClickListener() {

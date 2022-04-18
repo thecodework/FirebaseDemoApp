@@ -48,6 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //Neumorphism Library
     implementation 'com.github.fornewid:neumorphism:0.2.1'
+    implementation 'com.github.4inodev:Neomorphic-FrameLayout-Android:1.03'
     //FirebaseAnalytics
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
@@ -73,5 +74,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
+    //synth neumorphism
+    implementation 'club.cred.android:synth:1.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

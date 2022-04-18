@@ -12,4 +12,16 @@
     <color name="grey">#7e7e7e</color>
     <color name="dark_blue">#0F003D</color>
     <color name="blue">#004a6a</color>
+    <color name="bluegrey">#7393B3</color>
+    <color name="lightbule">#219ebc</color>
+    <color name="deepblue">#023047</color>
+    <color name="lowblue">#8ecae6</color>
+    <color name="synth_color">#212426</color>
+    <color name="greyback">#ccd5ae</color>
+    <color name="dark_color_shadow_light">#2C2C2C</color>
+    <color name="dark_color_shadow_dark">#111111</color>
+    <color name="yellow">#ffb703</color>
+    <color name="deep_yellow">#fb8500</color>
+    <color name="low_yellow">#dc2f02</color>
+
 </resources>

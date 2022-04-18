@@ -4,42 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_background"
+    android:background="@color/dark_color_shadow_dark"
     tools:context="ui.MainActivity">
-
-    <TextView
-        android:id="@+id/textWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="10dp"
-        android:text="Welcome"
-        android:textSize="30sp"
-        android:transitionName="welcome"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgTop"
-        android:layout_width="@dimen/space_100"
-        android:layout_height="@dimen/space_100"
-        android:src="@drawable/logo"
-        android:transitionName="imglogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textWelcome" />
 
     <ImageView
         android:id="@+id/imgBottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/background_bottom"
+        android:layout_height="@dimen/space_200"
+        android:layout_marginTop="@dimen/space_20"
+        android:scaleType="fitXY"
+        android:src="@drawable/loginback"
         android:transitionName="imgTree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgTop" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearBottom"
@@ -52,61 +30,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBottom">
 
-        <TextView
-            android:id="@+id/tvLogin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/semibold"
-            android:text="Login"
-            android:textColor="@color/blue"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:transitionName="welcome" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/space_24"
+                android:layout_weight="1"
+                android:fontFamily="@font/semibold"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:transitionName="welcome" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginRight="@dimen/space_24"
+                android:fontFamily="@font/medium"
+                android:text="Login with Phone number"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
 
         <soup.neumorphism.NeumorphCardView
             style="@style/Widget.Neumorph.CardView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_72"
-            android:layout_marginStart="@dimen/space_16"
+            android:layout_height="80dp"
             android:layout_marginTop="@dimen/space_20"
-            android:layout_marginEnd="@dimen/space_16"
+            android:padding="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+            app:neumorph_inset="12dp"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+            app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+            app:neumorph_shadowElevation="5dp"
             app:neumorph_shapeType="pressed">
 
             <EditText
                 android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/nobackground"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_marginEnd="@dimen/space_12"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/semibold"
                 android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="@dimen/space_12"
-                android:paddingEnd="@dimen/space_12"
-                android:textColor="@color/blue"
-                android:textColorHint="@color/blue"
-                android:textCursorDrawable="@drawable/cursor" />
+                android:singleLine="true"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow" />
         </soup.neumorphism.NeumorphCardView>
 
         <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cardView"
             style="@style/Widget.Neumorph.CardView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_72"
-            android:layout_marginStart="@dimen/space_16"
-            android:layout_marginTop="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_16"
+            android:layout_height="80dp"
+            android:padding="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:neumorph_backgroundColor="@color/dark_color_shadow_light"
+            app:neumorph_inset="12dp"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="@color/dark_color_shadow_dark"
+            app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+            app:neumorph_shadowElevation="5dp"
             app:neumorph_shapeType="pressed">
 
-            <!-- <EditText
-                 android:id="@+id/edPassword"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:background="@drawable/nobackground"
-                 android:hint="Password"
-                 android:inputType="textPassword"
-                 android:paddingLeft="10dp"
-                 android:paddingEnd="10dp"
-                 android:textCursorDrawable="@drawable/cursor" />-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tvPass"
                 style="@style/Widget.MyApp.TextInputLayout"
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/blue">
+                app:passwordToggleTint="@color/yellow">
 
                 <EditText
                     android:id="@+id/edPassword"
@@ -125,8 +125,8 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="1dp"
-                    android:textColor="@color/blue"
-                    android:textColorHint="@color/blue" />
+                    android:textColor="@color/yellow"
+                    android:textColorHint="@color/yellow" />
             </com.google.android.material.textfield.TextInputLayout>
         </soup.neumorphism.NeumorphCardView>
 
@@ -139,28 +139,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/space_24"
+                android:layout_marginRight="@dimen/space_20"
                 android:fontFamily="@font/medium"
-                android:text="Forget Password? "
-                android:textColor="@color/blue"
-                android:textSize="14sp"
+                android:text="Forget Password ?"
+                android:textColor="@color/white"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        <soup.neumorphism.NeumorphButton
+        <soup.neumorphism.NeumorphCardView
             android:id="@+id/btnLogin"
-            style="@style/Widget.Neumorph.Button"
+            style="@style/Widget.Neumorph.CardView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_60"
-            android:layout_marginStart="@dimen/space_16"
-            android:layout_marginTop="@dimen/space_16"
-            android:layout_marginEnd="@dimen/space_16"
-            android:fontFamily="@font/semibold"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/blue"
-            android:textSize="16sp"
-            app:neumorph_shapeType="flat" />
+            android:layout_height="@dimen/space_72"
+            android:padding="@dimen/space_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:neumorph_backgroundColor="@color/yellow"
+            app:neumorph_inset="@dimen/space_12"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="@color/deep_yellow"
+            app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+            app:neumorph_shadowElevation="@dimen/space_4"
+            app:neumorph_shapeType="flat">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </soup.neumorphism.NeumorphCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -175,7 +186,7 @@
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/medium"
                 android:text="Don't have an Account? "
-                android:textColor="@color/blue"
+                android:textColor="@color/white"
                 android:textSize="13sp" />
 
             <TextView
@@ -185,7 +196,7 @@
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/semibold"
                 android:text="Register Here"
-                android:textColor="@color/blue"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
