@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.messaging.ktx.messaging
 import com.thecodework.firebaseandroid.R
 
 
@@ -17,8 +16,8 @@ class CloudMessaging_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cloud_messaging)
 
-
-        Firebase.messaging.subscribeToTopic("weather")
+        Utils.changeStatusBar(this, R.color.dark_color_shadow_light)
+       /* Firebase.messaging.subscribeToTopic("weather")
             .addOnCompleteListener { task ->
                 var msg = "Done"
                 if (!task.isSuccessful) {
@@ -26,7 +25,7 @@ class CloudMessaging_Activity : AppCompatActivity() {
                 }
                 Log.d(TAG, msg)
                 Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-            }
+            }*/
 
        /* FirebaseInstanceId.getInstance().instanceId
             .addOnCompleteListener(OnCompleteListener { task ->

@@ -33,7 +33,7 @@ class CloudstorageActivity : AppCompatActivity() {
     }
 
     private fun initializer() {
-        Utils.changeStatusBar(this, R.color.light_background)
+        Utils.changeStatusBar(this, R.color.dark_color_shadow_light)
         firebaseStore = FirebaseStorage.getInstance()
         storageReference = FirebaseStorage.getInstance().reference
     }
