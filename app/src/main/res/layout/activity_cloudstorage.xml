@@ -4,55 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_background"
+    android:background="@color/black"
     tools:context=".ui.CloudstorageActivity">
 
-    <soup.neumorphism.NeumorphButton
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/btnUpload"
-        style="@style/Widget.Neumorph.Button"
+        style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_40"
-        android:layout_marginEnd="@dimen/space_16"
-        android:fontFamily="@font/semibold"
-        android:text="Upload"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_shapeType="flat" />
-
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnSave"
-        style="@style/Widget.Neumorph.Button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_16"
+        android:layout_height="@dimen/space_72"
         android:layout_marginTop="@dimen/space_20"
-        android:layout_marginEnd="@dimen/space_16"
-        android:fontFamily="@font/semibold"
-        android:text="Save"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:padding="@dimen/space_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:neumorph_backgroundColor="@color/yellow"
+        app:neumorph_inset="@dimen/space_12"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/deep_yellow"
+        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+        app:neumorph_shadowElevation="@dimen/space_4"
+        app:neumorph_shapeType="flat">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Upload"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/btnSave"
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_72"
+        android:layout_marginTop="@dimen/space_12"
+        android:padding="@dimen/space_24"
         app:layout_constraintTop_toBottomOf="@+id/btnUpload"
-        app:neumorph_shapeType="flat" />
+        app:neumorph_backgroundColor="@color/yellow"
+        app:neumorph_inset="@dimen/space_12"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="@color/deep_yellow"
+        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
+        app:neumorph_shadowElevation="@dimen/space_4"
+        app:neumorph_shapeType="flat">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </soup.neumorphism.NeumorphCardView>
+
 
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_marginTop="@dimen/space_4"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSave"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
 
     <ImageView
         android:id="@+id/imageview"

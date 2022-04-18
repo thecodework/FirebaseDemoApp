@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.CloudMessaging_Activity">
 
     <TextView
@@ -12,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_4"
         android:text="Cloud Messaging"
+        android:textColor="@color/yellow"
         android:textSize="20sp"
-        android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
