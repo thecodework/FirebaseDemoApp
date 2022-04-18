@@ -1,7 +1,9 @@
 package com.thecodework.firebaseandroid.ui
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
+import android.util.Pair
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, RegisterActivity::class.java))
         }
         binding.btnLogin.setOnClickListener {
+            binding.progress.visibility = View.VISIBLE
             emailid = binding.edEmail.text.toString()
             pass = binding.edPassword.text.toString()
             if (emailid.isEmpty() || pass.isEmpty() || pass.length < 5) {
@@ -60,7 +63,13 @@ class MainActivity : AppCompatActivity() {
                     this, "LoginSuccessful",
                     Toast.LENGTH_LONG
                 ).show()
-                startActivity(Intent(this, HomeActivity::class.java))
+                val intent = Intent(this, HomeActivity::class.java)
+                binding.progress.visibility = View.GONE
+                val options = ActivityOptions.makeSceneTransitionAnimation(
+                    this@MainActivity,
+                    Pair.create<View, String>(binding.imgBottom, "imgLogin")
+                )
+                startActivity(intent, options.toBundle())
             }
     }
 }

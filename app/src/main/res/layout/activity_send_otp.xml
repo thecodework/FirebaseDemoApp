@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,15 +19,21 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:transitionName="welcome" />
+        android:transitionName="welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <soup.neumorphism.NeumorphCardView
+        android:id="@+id/cardView"
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="@dimen/space_20"
         android:padding="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister"
         app:neumorph_backgroundColor="@color/dark_color_shadow_light"
         app:neumorph_inset="12dp"
         app:neumorph_lightSource="leftTop"
@@ -56,7 +62,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_72"
         android:padding="@dimen/space_24"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:neumorph_backgroundColor="@color/yellow"
         app:neumorph_inset="@dimen/space_12"
         app:neumorph_lightSource="leftTop"
@@ -75,5 +83,23 @@
             android:textSize="18sp"
             android:textStyle="bold" />
     </soup.neumorphism.NeumorphCardView>
-
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSendotp" />
+    <ImageView
+        android:id="@+id/imgBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_300"
+        android:scaleType="fitXY"
+        android:src="@drawable/phonelogin"
+        android:transitionName="imgLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

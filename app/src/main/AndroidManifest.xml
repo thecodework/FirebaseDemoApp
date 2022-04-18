@@ -20,12 +20,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAndroid">
         <activity
+            android:name=".ui.SplashScreen_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.ForgetPass_Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".ui.VerifyOtp_Activity" />
         <activity
             android:name=".ui.SendOtp_Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -42,16 +51,10 @@
 
         <activity
             android:name=".ui.CloudMessaging_Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".ui.ShowFirestore_Activity" />
         <activity
             android:name=".ui.FirestoreActivity"

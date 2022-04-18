@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseException
@@ -38,11 +39,13 @@ class SendOtp_Activity : AppCompatActivity() {
 
     private fun setClickListener() {
         binding.btnSendotp.setOnClickListener {
+            binding.progress.visibility = View.VISIBLE
             login()
         }
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
+                binding.progress.visibility = View.GONE
                 finish()
                 Log.d(TAG, "onVerificationCompleted Success")
             }
@@ -59,6 +62,7 @@ class SendOtp_Activity : AppCompatActivity() {
                 storedVerificationId = verificationId
                 resendToken = token
                 val intent = Intent(applicationContext, VerifyOtp_Activity::class.java)
+                binding.progress.visibility = View.GONE
                 intent.putExtra("storedVerificationId", storedVerificationId)
                 startActivity(intent)
                 finish()

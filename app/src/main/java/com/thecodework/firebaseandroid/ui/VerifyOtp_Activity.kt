@@ -2,6 +2,7 @@ package com.thecodework.firebaseandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -32,6 +33,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
 
     private fun setClickListener() {
         binding.btnVerify.setOnClickListener {
+            binding.progress.visibility = View.VISIBLE
             val storedVerificationId = intent.getStringExtra("storedVerificationId")
             val otp = binding.edotp.text.trim().toString()
             if (otp.isNotEmpty()) {
@@ -50,6 +52,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val intent = Intent(this, HomeActivity::class.java)
+                    binding.progress.visibility = View.GONE
                     startActivity(intent)
                     finish()
                 } else {
