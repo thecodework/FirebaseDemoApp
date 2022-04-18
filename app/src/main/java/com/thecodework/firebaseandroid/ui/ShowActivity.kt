@@ -29,7 +29,7 @@ class ShowActivity : AppCompatActivity() {
     }
 
     private fun setClickListener() {
-        binding.btnShow.setOnClickListener({
+        binding.btnShow.setOnClickListener {
             databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Details")
             databaseReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -53,6 +53,6 @@ class ShowActivity : AppCompatActivity() {
                     Log.d("TAG", "cancle")
                 }
             })
-        })
+        }
     }
 }

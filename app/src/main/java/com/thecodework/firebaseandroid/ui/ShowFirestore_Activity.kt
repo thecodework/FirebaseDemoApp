@@ -14,7 +14,7 @@ import java.util.ArrayList
 class ShowFirestore_Activity : AppCompatActivity() {
     lateinit var binding: ActivityShowFirestoreBinding
     var arraylist: ArrayList<ModelDbshow> = ArrayList()
-    lateinit var firestoreshowAdapter: FirestoreshowAdapter
+    private lateinit var firestoreshowAdapter: FirestoreshowAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityShowFirestoreBinding.inflate(layoutInflater)
@@ -40,7 +40,7 @@ class ShowFirestore_Activity : AppCompatActivity() {
                     firestoreshowAdapter =
                         FirestoreshowAdapter(this@ShowFirestore_Activity, arraylist)
                     firestoreshowAdapter.notifyDataSetChanged()
-                    binding.rvList.setAdapter(firestoreshowAdapter)
+                    binding.rvList.adapter = firestoreshowAdapter
                 }
 
 

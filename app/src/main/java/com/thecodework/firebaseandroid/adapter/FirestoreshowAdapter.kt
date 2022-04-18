@@ -28,11 +28,15 @@ class FirestoreshowAdapter(
     override fun onBindViewHolder(holder: myholder, position: Int) {
         holder.tvName.text = arrayList[position].name
         holder.tvNumber.text = arrayList[position].number
+        holder.tvAddress.text = arrayList[position].address
+        holder.tvEmail.text = arrayList[position].email
 
     }
 
     class myholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvName: TextView = itemView.findViewById(R.id.tvName)
         val tvNumber: TextView = itemView.findViewById(R.id.tvNumber)
+        val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
+        val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
     }
 }

@@ -9,13 +9,48 @@
         android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Author" />
+        android:fontFamily="@font/medium"
+        android:text="Author"
+        android:textColor="@color/yellow"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_4"
-        android:text="Comment" />
+        android:fontFamily="@font/medium"
+        android:text="Comment"
+        android:textColor="@color/yellow"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:fontFamily="@font/medium"
+        android:text="Comment"
+        android:textColor="@color/yellow"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:fontFamily="@font/medium"
+        android:text="Comment"
+        android:textColor="@color/yellow"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/space_12"
+        android:background="@color/dark_color_shadow_light" />
 </LinearLayout>
