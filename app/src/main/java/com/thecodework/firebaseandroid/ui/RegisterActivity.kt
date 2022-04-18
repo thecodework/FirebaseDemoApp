@@ -36,7 +36,6 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
         })
         binding.btnRegister.setOnClickListener(View.OnClickListener {
-            binding.progress.visibility = View.VISIBLE
             Log.d("TAG", "enter field")
             emailid = binding.edEmail.text.toString().trim()
             pass = binding.edPassword.text.toString().trim()
@@ -46,6 +45,7 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             } else {
+                binding.progress.visibility = View.VISIBLE
                 register(emailid, pass)
             }
 

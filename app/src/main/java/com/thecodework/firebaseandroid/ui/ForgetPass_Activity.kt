@@ -32,11 +32,11 @@ class ForgetPass_Activity : AppCompatActivity() {
 
     private fun setClickListener() {
         binding.btnSubmit.setOnClickListener(View.OnClickListener {
-            binding.progress.visibility = View.VISIBLE
             email = binding.edEmail.text.toString()
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter email id", Toast.LENGTH_LONG).show()
             } else {
+                binding.progress.visibility = View.VISIBLE
                 resetPassword(email)
             }
         })

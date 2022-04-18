@@ -39,7 +39,6 @@ class SendOtp_Activity : AppCompatActivity() {
 
     private fun setClickListener() {
         binding.btnSendotp.setOnClickListener {
-            binding.progress.visibility = View.VISIBLE
             login()
         }
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -74,6 +73,7 @@ class SendOtp_Activity : AppCompatActivity() {
         number = binding.edNumber.text.trim().toString()
         if (number.isNotEmpty() && number.length == 10) {
             number = "+91$number"
+            binding.progress.visibility = View.VISIBLE
             sendVerificationCode(number)
         } else {
             Toast.makeText(this, "Enter valid mobile number", Toast.LENGTH_SHORT).show()

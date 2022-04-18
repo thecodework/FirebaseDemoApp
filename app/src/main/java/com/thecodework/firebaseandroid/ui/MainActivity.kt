@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, RegisterActivity::class.java))
         }
         binding.btnLogin.setOnClickListener {
-            binding.progress.visibility = View.VISIBLE
             emailid = binding.edEmail.text.toString()
             pass = binding.edPassword.text.toString()
             if (emailid.isEmpty() || pass.isEmpty() || pass.length < 5) {
@@ -45,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             } else {
+                binding.progress.visibility = View.VISIBLE
                 userLogin(emailid, pass)
             }
         }
