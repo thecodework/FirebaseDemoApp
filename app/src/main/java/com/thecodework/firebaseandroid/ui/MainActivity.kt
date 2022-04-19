@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     this, "LoginSuccessful",
                     Toast.LENGTH_LONG
                 ).show()
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, BottomnavActivity::class.java)
                 binding.progress.visibility = View.GONE
                 val options = ActivityOptions.makeSceneTransitionAnimation(
                     this@MainActivity,

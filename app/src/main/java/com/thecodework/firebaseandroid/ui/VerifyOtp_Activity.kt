@@ -51,7 +51,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, BottomnavActivity::class.java)
                     binding.progress.visibility = View.GONE
                     startActivity(intent)
                     finish()

@@ -10,7 +10,6 @@ import com.thecodework.firebaseandroid.databinding.ActivityBottomnavBinding
 
 class BottomnavActivity : AppCompatActivity() {
     lateinit var binding: ActivityBottomnavBinding
-    private lateinit var bottomNav: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBottomnavBinding.inflate(layoutInflater)
@@ -20,7 +19,7 @@ class BottomnavActivity : AppCompatActivity() {
     }
 
     private fun setlistener() {
-        bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+      binding.bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
             var f: Fragment? = null
             when (item.itemId) {
                 R.id.menu_student -> f = StudentFragment()
