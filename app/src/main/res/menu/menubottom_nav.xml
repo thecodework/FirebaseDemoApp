@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_student"
+        android:icon="@drawable/login"
+        android:title="Student" />
+    <item
+        android:id="@+id/menu_teacher"
+        android:icon="@drawable/login"
+        android:title="Teacher" />
+</menu>

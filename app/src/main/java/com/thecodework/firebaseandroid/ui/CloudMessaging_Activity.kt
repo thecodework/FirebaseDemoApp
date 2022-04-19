@@ -28,19 +28,19 @@ class CloudMessaging_Activity : AppCompatActivity() {
                 Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             }
 
-       /* FirebaseInstanceId.getInstance().instanceId
-            .addOnCompleteListener(OnCompleteListener { task ->
+        /* FirebaseInstanceId.getInstance().instanceId
+             .addOnCompleteListener(OnCompleteListener { task ->
 
-                if (!task.isSuccessful) {
-                    Log.w(TAG, "getInstanceId failed", task.exception)
-                    return@OnCompleteListener
-                }
+                 if (!task.isSuccessful) {
+                     Log.w(TAG, "getInstanceId failed", task.exception)
+                     return@OnCompleteListener
+                 }
 
-                val token = task.result?.token
-                val msg = token.toString()
-                Log.d(TAG, msg)
-                Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
-            })*/
+                 val token = task.result?.token
+                 val msg = token.toString()
+                 Log.d(TAG, msg)
+                 Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
+             })*/
 
-}
+    }
 }

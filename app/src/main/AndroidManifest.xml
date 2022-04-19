@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAndroid">
         <activity
+            android:name=".ui.BottomnavActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashScreen_Activity"
             android:exported="true">
             <intent-filter>
@@ -54,7 +57,7 @@
             android:exported="true" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".ui.ShowFirestore_Activity" />
         <activity
             android:name=".ui.FirestoreActivity"

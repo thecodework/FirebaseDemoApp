@@ -54,18 +54,17 @@ class CloudstorageActivity : AppCompatActivity() {
             binding.progress.visibility = View.VISIBLE
             if (filePath != null) {
                 val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
-                ref?.putFile(filePath!!)?.addOnSuccessListener(
-                    { taskSnapshot ->
-                        taskSnapshot.storage.downloadUrl.addOnSuccessListener {
-                            binding.progress.visibility = View.GONE
-                            binding.imageview.setImageResource(R.drawable.ic_launcher_foreground)
-                            Toast.makeText(
-                                this, "Save",
-                                Toast.LENGTH_LONG
-                            ).show()
+                ref?.putFile(filePath!!)?.addOnSuccessListener { taskSnapshot ->
+                    taskSnapshot.storage.downloadUrl.addOnSuccessListener {
+                        binding.progress.visibility = View.GONE
+                        binding.imageview.setImageResource(R.drawable.ic_launcher_foreground)
+                        Toast.makeText(
+                            this, "Save",
+                            Toast.LENGTH_LONG
+                        ).show()
 
-                        }
-                    })
+                    }
+                }
 
                     ?.addOnFailureListener(OnFailureListener { e ->
                         Toast.makeText(
