@@ -26,7 +26,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/space_12"
                 android:fontFamily="@font/semibold"
-                android:text="Teacher Details"
+                android:text="Teacher's Details"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
                 android:textStyle="bold"
