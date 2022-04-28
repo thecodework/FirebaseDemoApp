@@ -136,7 +136,6 @@ class StudentFragment : Fragment() {
 
             filePath = data.data
             try {
-                //  val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
                 val contentResolver = requireActivity().contentResolver
                 val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
                 binding.imageProfile.setImageBitmap(bitmap)
