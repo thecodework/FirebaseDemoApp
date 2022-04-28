@@ -27,7 +27,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/space_12"
                 android:fontFamily="@font/semibold"
-                android:text="Student's Details"
+                android:text="Teacher's Details"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -195,6 +195,7 @@
 
 
         </LinearLayout>
+
         <ImageView
             android:id="@+id/imgBottom"
             android:layout_width="match_parent"
@@ -207,3 +208,4 @@
             app:layout_constraintTop_toBottomOf="@id/linear1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
+
