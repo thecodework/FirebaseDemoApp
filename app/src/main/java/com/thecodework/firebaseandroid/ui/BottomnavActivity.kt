@@ -19,7 +19,7 @@ class BottomnavActivity : AppCompatActivity() {
     }
 
     private fun setlistener() {
-      binding.bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+        binding.bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
             var f: Fragment? = null
             when (item.itemId) {
                 R.id.menu_student -> f = StudentFragment()
