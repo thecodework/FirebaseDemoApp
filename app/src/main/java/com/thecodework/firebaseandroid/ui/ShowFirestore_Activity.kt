@@ -25,7 +25,7 @@ class ShowFirestore_Activity : AppCompatActivity() {
     }
 
     private fun initializer() {
-        Utils.changeStatusBar(this, R.color.light_background)
+        Utils.changeStatusBar(this, R.color.dark_color_shadow_light)
     }
 
     private fun setClickListener() {
