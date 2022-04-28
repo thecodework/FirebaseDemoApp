@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/space_12"
+                android:layout_marginTop="@dimen/space_72"
                 android:fontFamily="@font/semibold"
                 android:text="Student's Details"
                 android:textColor="@color/yellow"
@@ -34,6 +34,7 @@
                 android:transitionName="welcome" />
 
             <ImageView
+                android:id="@+id/imageProfile"
                 android:layout_width="@dimen/space_100"
                 android:layout_height="@dimen/space_100"
                 android:layout_gravity="center_horizontal"
@@ -41,6 +42,7 @@
                 android:background="@drawable/profileback" />
 
             <TextView
+                android:id="@+id/tvUpload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -202,6 +204,7 @@
             android:layout_marginTop="@dimen/space_40"
             android:src="@drawable/phonelogin"
             android:transitionName="imgTree"
+            android:layout_marginBottom="@dimen/space_50"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linear1" />

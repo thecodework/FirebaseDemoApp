@@ -23,7 +23,7 @@ class BottomnavActivity : AppCompatActivity() {
             var f: Fragment? = null
             when (item.itemId) {
                 R.id.menu_student -> f = StudentFragment()
-                R.id.menu_teacher -> f = StudentFragment()
+                R.id.menu_teacher -> f = TeacherFragment()
 
             }
             supportFragmentManager.beginTransaction().replace(R.id.main_Layout, f!!).commit()
