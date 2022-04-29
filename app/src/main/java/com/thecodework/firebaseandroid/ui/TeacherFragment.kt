@@ -17,7 +17,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.thecodework.firebaseandroid.R
-import com.thecodework.firebaseandroid.databinding.FragmentStudentBinding
 import com.thecodework.firebaseandroid.databinding.FragmentTeacherBinding
 import java.io.IOException
 import java.util.*
@@ -106,7 +105,7 @@ class TeacherFragment : Fragment() {
                                     startActivity(
                                         Intent(
                                             activity,
-                                            ShowFirestore_Activity::class.java
+                                            ShowFirestoreActivity::class.java
                                         )
                                     )
                                     binding.edName.text.clear()

@@ -56,7 +56,7 @@ class FirestoreActivity : AppCompatActivity() {
                             this, "Save",
                             Toast.LENGTH_LONG
                         ).show()
-                        startActivity(Intent(this, ShowFirestore_Activity::class.java))
+                        startActivity(Intent(this, ShowFirestoreActivity::class.java))
                         binding.edName.text.clear()
                         binding.edNumber.text.clear()
                         binding.edAddress.text.clear()

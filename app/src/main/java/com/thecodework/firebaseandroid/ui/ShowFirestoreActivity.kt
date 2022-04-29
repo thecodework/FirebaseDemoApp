@@ -11,7 +11,7 @@ import com.thecodework.firebaseandroid.model.ModelDbshow
 import com.thecodework.firebaseandroid.util.Utils
 import java.util.ArrayList
 
-class ShowFirestore_Activity : AppCompatActivity() {
+class ShowFirestoreActivity : AppCompatActivity() {
     lateinit var binding: ActivityShowFirestoreBinding
     var arraylist: ArrayList<ModelDbshow> = ArrayList()
     private lateinit var firestormsAdapter: FirestormsAdapter
@@ -38,7 +38,7 @@ class ShowFirestore_Activity : AppCompatActivity() {
                         arraylist.add(model)
                     }
                     firestormsAdapter =
-                        FirestormsAdapter(this@ShowFirestore_Activity, arraylist)
+                        FirestormsAdapter(this@ShowFirestoreActivity, arraylist)
                     firestormsAdapter.notifyDataSetChanged()
                     binding.rvList.adapter = firestormsAdapter
                 }

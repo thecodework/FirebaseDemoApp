@@ -61,7 +61,7 @@
             android:name=".ui.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.ShowFirestore_Activity"
+            android:name=".ui.ShowFirestoreActivity"
             android:exported="true">
 
         </activity>
