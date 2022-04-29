@@ -6,33 +6,31 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".ui.ShowFirestoreActivity">
-
-    <soup.neumorphism.NeumorphCardView
-        android:id="@+id/btnShow"
-        style="@style/Widget.Neumorph.CardView"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_72"
-        android:layout_marginTop="@dimen/space_20"
-        android:padding="@dimen/space_24"
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_12"
+        android:fontFamily="@font/semibold"
+        android:text="Teacher's List"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_backgroundColor="@color/yellow"
-        app:neumorph_inset="@dimen/space_12"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="@color/deep_yellow"
-        app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
-        app:neumorph_shadowElevation="@dimen/space_4"
-        app:neumorph_shapeType="flat">
+        android:transitionName="welcome" />
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/bold"
-            android:gravity="center"
-            android:text="Show"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </soup.neumorphism.NeumorphCardView>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -40,7 +38,7 @@
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShow">
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvList"

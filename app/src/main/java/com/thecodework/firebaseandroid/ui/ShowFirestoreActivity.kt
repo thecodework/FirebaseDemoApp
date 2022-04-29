@@ -21,29 +21,24 @@ class ShowFirestoreActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initializer()
-        setClickListener()
     }
 
     private fun initializer() {
+        binding.progress.visibility = View.VISIBLE
         Utils.changeStatusBar(this, R.color.dark_color_shadow_light)
-    }
-
-    private fun setClickListener() {
-        binding.btnShow.setOnClickListener(View.OnClickListener {
-            FirebaseFirestore.getInstance().collection("users")
-                .addSnapshotListener { value, e ->
-                    arraylist.clear()
-                    for (doc in value!!) {
-                        val model = doc.toObject(ModelDbshow::class.java)
-                        arraylist.add(model)
-                    }
-                    firestormsAdapter =
-                        FirestormsAdapter(this@ShowFirestoreActivity, arraylist)
-                    firestormsAdapter.notifyDataSetChanged()
-                    binding.rvList.adapter = firestormsAdapter
+        FirebaseFirestore.getInstance().collection("users")
+            .addSnapshotListener { value, e ->
+                arraylist.clear()
+                for (doc in value!!) {
+                    val model = doc.toObject(ModelDbshow::class.java)
+                    arraylist.add(model)
                 }
-
-
-        })
+                firestormsAdapter =
+                    FirestormsAdapter(this@ShowFirestoreActivity, arraylist)
+                firestormsAdapter.notifyDataSetChanged()
+                binding.rvList.adapter = firestormsAdapter
+                binding.progress.visibility = View.GONE
+            }
     }
+
 }

@@ -41,7 +41,7 @@ class StudentFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentStudentBinding.inflate(inflater, container, false)
         initializer()
         setClickListener()
@@ -54,14 +54,14 @@ class StudentFragment : Fragment() {
     }
 
     private fun setClickListener() {
-        binding.btnSave.setOnClickListener(View.OnClickListener {
+        binding.btnSave.setOnClickListener {
             binding.progress.visibility = View.VISIBLE
             if (filePath != null) {
                 val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
                 ref?.putFile(filePath!!)?.addOnSuccessListener { taskSnapshot ->
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                         binding.imageProfile.setImageResource(R.drawable.ic_launcher_foreground)
-                        var imageUrl = it.toString()
+                        val imageUrl = it.toString()
                         name = binding.edName.text.toString()
                         number = binding.edNumber.text.toString()
                         address = binding.edAddress.text.toString()
@@ -73,7 +73,7 @@ class StudentFragment : Fragment() {
                             ).show()
                             binding.progress.visibility = View.GONE
                         } else {
-                            var hashMap: HashMap<String, String> = HashMap<String, String>()
+                            val hashMap: HashMap<String, String> = HashMap<String, String>()
                             hashMap.put("name", name)
                             hashMap.put("number", number)
                             hashMap.put("address", address)
@@ -97,26 +97,21 @@ class StudentFragment : Fragment() {
                     }
                 }
 
-                    ?.addOnFailureListener(OnFailureListener { e ->
+                    ?.addOnFailureListener { e ->
                         Toast.makeText(
                             activity, e.message,
                             Toast.LENGTH_LONG
                         ).show()
                         Log.d("TAG", e.message.toString())
-                    })
+                    }
 
 
             } else {
                 Toast.makeText(activity, "Please Upload an Image", Toast.LENGTH_SHORT).show()
                 binding.progress.visibility = View.GONE
             }
-
-            //   databaseReference = FirebaseDatabase.getInstance().getReference("User")
-            //   databaseReference.child("numbers").push().setValue(1)
-
-
-        })
-        binding.tvUpload.setOnClickListener(View.OnClickListener {
+        }
+        binding.tvUpload.setOnClickListener {
             val intent = Intent()
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
@@ -124,7 +119,7 @@ class StudentFragment : Fragment() {
                 Intent.createChooser(intent, "Select Picture"),
                 imageRequest
             )
-        })
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
