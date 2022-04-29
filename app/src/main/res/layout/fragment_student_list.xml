@@ -69,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_12"
                 android:layout_marginBottom="@dimen/space_40"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/row_dbshow" />

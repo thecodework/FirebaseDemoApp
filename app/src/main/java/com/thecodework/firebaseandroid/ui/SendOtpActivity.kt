@@ -44,7 +44,7 @@ class SendOtpActivity : AppCompatActivity() {
         }
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                startActivity(Intent(applicationContext, HomeActivity::class.java))
+                startActivity(Intent(applicationContext, BottomnavActivity::class.java))
                 binding.progress.visibility = View.GONE
                 finish()
                 Log.d(TAG, "onVerificationCompleted Success")

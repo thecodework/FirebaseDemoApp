@@ -18,7 +18,6 @@ class Application : Application() {
                     msg = "Failed"
                 }
                 Log.d(ContentValues.TAG, msg)
-                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             }
     }
 }
