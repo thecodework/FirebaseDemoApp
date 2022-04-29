@@ -5,5 +5,5 @@ data class ModelDbshow(
     var number: String? = null,
     var address: String? = null,
     var email: String? = null,
-    var image: String? = null
+    var url: String? = null
 )

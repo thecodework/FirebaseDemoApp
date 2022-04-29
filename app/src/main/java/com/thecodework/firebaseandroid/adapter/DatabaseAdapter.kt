@@ -1,6 +1,7 @@
 package com.thecodework.firebaseandroid.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,8 @@ class DatabaseAdapter(
         holder.tvNumber.text = arrayList[position].number
         holder.tvAddress.text = arrayList[position].address
         holder.tvEmail.text = arrayList[position].email
-        Glide.with(context).load(arrayList[position].image)
+        Log.d("url", arrayList[position].url.toString())
+        Glide.with(context).load(arrayList[position].url)
             .into(holder.imageProfile)
     }
 

@@ -32,7 +32,7 @@ class FirestormsAdapter(
         holder.tvNumber.text = arrayList[position].number
         holder.tvAddress.text = arrayList[position].address
         holder.tvEmail.text = arrayList[position].email
-        Glide.with(context).load(arrayList[position].image)
+        Glide.with(context).load(arrayList[position].url)
             .into(holder.imageProfile)
     }
 
