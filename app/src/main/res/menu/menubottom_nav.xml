@@ -8,4 +8,8 @@
         android:id="@+id/menu_teacher"
         android:icon="@drawable/teacher"
         android:title="Teacher" />
+    <item
+        android:id="@+id/menu_list"
+        android:icon="@drawable/list"
+        android:title="List" />
 </menu>

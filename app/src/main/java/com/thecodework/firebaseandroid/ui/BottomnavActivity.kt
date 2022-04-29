@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationBarView
 import com.thecodework.firebaseandroid.R
+import com.thecodework.firebaseandroid.StudentListFragment
 import com.thecodework.firebaseandroid.databinding.ActivityBottomnavBinding
 import com.thecodework.firebaseandroid.util.Utils
 
@@ -24,7 +25,7 @@ class BottomnavActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.menu_student -> f = StudentFragment()
                 R.id.menu_teacher -> f = TeacherFragment()
-
+                R.id.menu_list -> f = StudentFragment()
             }
             supportFragmentManager.beginTransaction().replace(R.id.main_Layout, f!!).commit()
             true

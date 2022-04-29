@@ -180,6 +180,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:neumorph_backgroundColor="@color/yellow"
                 app:neumorph_inset="@dimen/space_12"
+                android:layout_marginLeft="@dimen/space_52"
+                android:layout_marginRight="@dimen/space_52"
                 app:neumorph_lightSource="leftTop"
                 app:neumorph_shadowColorDark="@color/deep_yellow"
                 app:neumorph_shadowColorLight="@color/dark_color_shadow_light"
