@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.ktx.messaging
 import com.thecodework.firebaseandroid.R
+import com.thecodework.firebaseandroid.util.Utils
 
 
 class CloudMessaging_Activity : AppCompatActivity() {

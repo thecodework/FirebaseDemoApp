@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityFirestoreBinding
+import com.thecodework.firebaseandroid.util.Utils
 
 class FirestoreActivity : AppCompatActivity() {
     lateinit var binding: ActivityFirestoreBinding

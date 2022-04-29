@@ -14,9 +14,10 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivitySendOtpBinding
+import com.thecodework.firebaseandroid.util.Utils
 import java.util.concurrent.TimeUnit
 
-class SendOtp_Activity : AppCompatActivity() {
+class SendOtpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySendOtpBinding
     lateinit var auth: FirebaseAuth
     var number: String = ""
@@ -34,7 +35,7 @@ class SendOtp_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
-        Utils.changeStatusBar(this@SendOtp_Activity, R.color.dark_color_shadow_light)
+        Utils.changeStatusBar(this@SendOtpActivity, R.color.dark_color_shadow_light)
     }
 
     private fun setClickListener() {
@@ -51,6 +52,7 @@ class SendOtp_Activity : AppCompatActivity() {
 
             override fun onVerificationFailed(e: FirebaseException) {
                 Log.d(TAG, "onVerificationFailed  $e")
+                binding.progress.visibility = View.GONE
             }
 
             override fun onCodeSent(
@@ -60,7 +62,7 @@ class SendOtp_Activity : AppCompatActivity() {
                 Log.d(TAG, "onCodeSent: $verificationId")
                 storedVerificationId = verificationId
                 resendToken = token
-                val intent = Intent(applicationContext, VerifyOtp_Activity::class.java)
+                val intent = Intent(applicationContext, VerifyOtpActivity::class.java)
                 binding.progress.visibility = View.GONE
                 intent.putExtra("storedVerificationId", storedVerificationId)
                 startActivity(intent)
@@ -77,6 +79,7 @@ class SendOtp_Activity : AppCompatActivity() {
             sendVerificationCode(number)
         } else {
             Toast.makeText(this, "Enter valid mobile number", Toast.LENGTH_SHORT).show()
+            binding.progress.visibility = View.GONE
         }
     }
 

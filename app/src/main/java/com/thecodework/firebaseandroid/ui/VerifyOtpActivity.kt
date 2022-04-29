@@ -11,11 +11,11 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityVerifyOtpBinding
+import com.thecodework.firebaseandroid.util.Utils
 
-class VerifyOtp_Activity : AppCompatActivity() {
+class VerifyOtpActivity : AppCompatActivity() {
     lateinit var binding: ActivityVerifyOtpBinding
-    lateinit var auth: FirebaseAuth
-    lateinit var storedVerificationId: String
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityVerifyOtpBinding.inflate(layoutInflater)
@@ -27,7 +27,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
-        Utils.changeStatusBar(this@VerifyOtp_Activity, R.color.dark_color_shadow_light)
+        Utils.changeStatusBar(this@VerifyOtpActivity, R.color.dark_color_shadow_light)
 
     }
 
@@ -58,6 +58,7 @@ class VerifyOtp_Activity : AppCompatActivity() {
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show()
+                        binding.progress.visibility = View.GONE
                     }
                 }
             }

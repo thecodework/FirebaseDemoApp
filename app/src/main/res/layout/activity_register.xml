@@ -120,7 +120,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/nobackground"
                         android:fontFamily="@font/semibold"
-                        android:hint="Password"
+                        android:hint="Password should 6 digit"
                         android:inputType="textPassword"
                         android:padding="1dp"
                         android:textColor="@color/yellow"

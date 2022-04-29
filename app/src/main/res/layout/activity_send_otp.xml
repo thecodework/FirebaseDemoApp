@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".ui.SendOtp_Activity">
+    tools:context=".ui.SendOtpActivity">
 
     <TextView
         android:id="@+id/tvRegister"

@@ -3,10 +3,10 @@ package com.thecodework.firebaseandroid.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityBottomnavBinding
+import com.thecodework.firebaseandroid.util.Utils
 
 class BottomnavActivity : AppCompatActivity() {
     lateinit var binding: ActivityBottomnavBinding

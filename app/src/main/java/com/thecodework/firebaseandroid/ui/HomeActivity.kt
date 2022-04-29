@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityHomeBinding
+import com.thecodework.firebaseandroid.util.Utils
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding

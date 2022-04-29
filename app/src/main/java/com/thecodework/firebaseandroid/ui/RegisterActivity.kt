@@ -9,13 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityRegisterBinding
+import com.thecodework.firebaseandroid.util.Utils
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var emailid: String
-    lateinit var pass: String
-    lateinit var auth: FirebaseAuth
-    lateinit var binding: ActivityRegisterBinding
+    private lateinit var emailid: String
+    private lateinit var pass: String
+    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -32,10 +33,10 @@ class RegisterActivity : AppCompatActivity() {
 
 
     private fun setClickListener() {
-        binding.tvLogin.setOnClickListener(View.OnClickListener {
+        binding.tvLogin.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
-        })
-        binding.btnRegister.setOnClickListener(View.OnClickListener {
+        }
+        binding.btnRegister.setOnClickListener {
             Log.d("TAG", "enter field")
             emailid = binding.edEmail.text.toString().trim()
             pass = binding.edPassword.text.toString().trim()
@@ -49,7 +50,7 @@ class RegisterActivity : AppCompatActivity() {
                 register(emailid, pass)
             }
 
-        })
+        }
     }
 
     private fun register(userEmail: String, userPass: String) {
@@ -69,6 +70,7 @@ class RegisterActivity : AppCompatActivity() {
                         baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT
                     ).show()
+                    binding.progress.visibility = View.GONE
                 }
             }
     }

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityMainBinding
+import com.thecodework.firebaseandroid.util.Utils
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,11 +49,11 @@ class MainActivity : AppCompatActivity() {
                 userLogin(emailid, pass)
             }
         }
-        binding.tvForgetPass.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this, ForgetPass_Activity::class.java))
-        })
+        binding.tvForgetPass.setOnClickListener {
+            startActivity(Intent(this, ForgetPassActivity::class.java))
+        }
         binding.tvPhone.setOnClickListener {
-            startActivity(Intent(this, SendOtp_Activity::class.java))
+            startActivity(Intent(this, SendOtpActivity::class.java))
         }
     }
 
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 binding.progress.visibility = View.GONE
                 val options = ActivityOptions.makeSceneTransitionAnimation(
                     this@MainActivity,
-                    Pair.create<View, String>(binding.imgBottom, "imgLogin")
+                    Pair.create(binding.imgBottom, "imgLogin")
                 )
                 startActivity(intent, options.toBundle())
             }

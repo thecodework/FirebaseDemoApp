@@ -1,4 +1,4 @@
-package com.thecodework.firebaseandroid.ui
+package com.thecodework.firebaseandroid.util
 
 import android.app.Activity
 import android.os.Build

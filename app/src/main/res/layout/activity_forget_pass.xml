@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/lowblue"
     android:orientation="vertical"
-    tools:context=".ui.ForgetPass_Activity">
+    tools:context=".ui.ForgetPassActivity">
 
     <TextView
         android:id="@+id/tvForgetPass"
@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/space_12"
         android:fontFamily="@font/semibold"
-        android:text="Reset Password"
+        android:text="@string/reset_password"
         android:textColor="@color/blue"
         android:textSize="30sp"
         android:textStyle="bold"

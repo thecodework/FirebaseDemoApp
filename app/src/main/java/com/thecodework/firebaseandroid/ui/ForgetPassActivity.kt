@@ -12,11 +12,12 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.ActivityForgetPassBinding
+import com.thecodework.firebaseandroid.util.Utils
 
-class ForgetPass_Activity : AppCompatActivity() {
-    lateinit var binding: ActivityForgetPassBinding
-    lateinit var email: String
-    lateinit var auth: FirebaseAuth
+class ForgetPassActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityForgetPassBinding
+    private lateinit var email: String
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityForgetPassBinding.inflate(layoutInflater)
@@ -27,11 +28,11 @@ class ForgetPass_Activity : AppCompatActivity() {
 
     private fun initializer() {
         auth = FirebaseAuth.getInstance()
-        Utils.changeStatusBar(this@ForgetPass_Activity, R.color.lowblue)
+        Utils.changeStatusBar(this@ForgetPassActivity, R.color.lowblue)
     }
 
     private fun setClickListener() {
-        binding.btnSubmit.setOnClickListener(View.OnClickListener {
+        binding.btnSubmit.setOnClickListener {
             email = binding.edEmail.text.toString()
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter email id", Toast.LENGTH_LONG).show()
@@ -39,7 +40,7 @@ class ForgetPass_Activity : AppCompatActivity() {
                 binding.progress.visibility = View.VISIBLE
                 resetPassword(email)
             }
-        })
+        }
     }
 
     private fun resetPassword(email: String) {
@@ -52,6 +53,7 @@ class ForgetPass_Activity : AppCompatActivity() {
                     Toast.makeText(this, "Check email id", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this, task.exception.toString(), Toast.LENGTH_LONG).show()
+                    binding.progress.visibility = View.GONE
                 }
             }
 
