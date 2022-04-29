@@ -3,10 +3,9 @@ package com.thecodework.firebaseandroid.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.thecodework.firebaseandroid.R
-import com.thecodework.firebaseandroid.adapter.FirestoreshowAdapter
+import com.thecodework.firebaseandroid.adapter.FirestormsAdapter
 import com.thecodework.firebaseandroid.databinding.ActivityShowFirestoreBinding
 import com.thecodework.firebaseandroid.model.ModelDbshow
 import java.util.ArrayList
@@ -14,7 +13,7 @@ import java.util.ArrayList
 class ShowFirestore_Activity : AppCompatActivity() {
     lateinit var binding: ActivityShowFirestoreBinding
     var arraylist: ArrayList<ModelDbshow> = ArrayList()
-    private lateinit var firestoreshowAdapter: FirestoreshowAdapter
+    private lateinit var firestormsAdapter: FirestormsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityShowFirestoreBinding.inflate(layoutInflater)
@@ -37,10 +36,10 @@ class ShowFirestore_Activity : AppCompatActivity() {
                         val model = doc.toObject(ModelDbshow::class.java)
                         arraylist.add(model)
                     }
-                    firestoreshowAdapter =
-                        FirestoreshowAdapter(this@ShowFirestore_Activity, arraylist)
-                    firestoreshowAdapter.notifyDataSetChanged()
-                    binding.rvList.adapter = firestoreshowAdapter
+                    firestormsAdapter =
+                        FirestormsAdapter(this@ShowFirestore_Activity, arraylist)
+                    firestormsAdapter.notifyDataSetChanged()
+                    binding.rvList.adapter = firestormsAdapter
                 }
 
 

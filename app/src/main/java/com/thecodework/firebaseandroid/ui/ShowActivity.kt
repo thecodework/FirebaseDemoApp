@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import com.thecodework.firebaseandroid.R
-import com.thecodework.firebaseandroid.adapter.DatashowAdapter
+import com.thecodework.firebaseandroid.adapter.DatabaseAdapter
 import com.thecodework.firebaseandroid.databinding.ActivityShowBinding
 import com.thecodework.firebaseandroid.model.ModelDbshow
 import java.util.*
@@ -45,12 +45,12 @@ class ShowActivity : AppCompatActivity() {
                             arraylist.add(model!!)
                             Log.d("TAG", arraylist.toString())
                         }
-                        binding.rvList.adapter = DatashowAdapter(this@ShowActivity, arraylist)
+                        binding.rvList.adapter = DatabaseAdapter(this@ShowActivity, arraylist)
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Log.d("TAG", "cancle")
+                    Log.d("TAG", "cancel")
                 }
             })
         }
