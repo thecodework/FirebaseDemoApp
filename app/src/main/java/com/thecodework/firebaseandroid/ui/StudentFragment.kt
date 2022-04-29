@@ -87,7 +87,6 @@ class StudentFragment : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.progress.visibility = View.GONE
-                            startActivity(Intent(activity, ShowActivity::class.java))
                             binding.edName.text.clear()
                             binding.edNumber.text.clear()
                             binding.edAddress.text.clear()

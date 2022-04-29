@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/medium"
-                android:text="Name:- "
+                android:text="Name: "
                 android:textColor="@color/ligityellow"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -30,8 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_4"
                 android:fontFamily="@font/medium"
-                android:text="Number:- "
-                android:textColor="@color/yellow"
+                android:text="Number: "
+                android:textColor="@color/ligityellow"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -40,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_4"
                 android:fontFamily="@font/medium"
-                android:text="Address:- "
-                android:textColor="@color/yellow"
+                android:text="Address: "
+                android:textColor="@color/ligityellow"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_4"
                 android:fontFamily="@font/medium"
-                android:text="Email:- "
-                android:textColor="@color/yellow"
+                android:text="Email: "
+                android:textColor="@color/ligityellow"
                 android:textSize="16dp"
                 android:textStyle="bold" />
         </LinearLayout>

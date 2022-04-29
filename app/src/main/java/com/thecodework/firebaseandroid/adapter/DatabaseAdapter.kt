@@ -13,7 +13,7 @@ import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.model.ModelDbshow
 
 class DatabaseAdapter(
-    val context: Context,
+    val context: Context?,
     private val arrayList: ArrayList<ModelDbshow>
 ) :
     RecyclerView.Adapter<DatabaseAdapter.Holder>() {
@@ -34,8 +34,10 @@ class DatabaseAdapter(
         holder.tvAddress.text = arrayList[position].address
         holder.tvEmail.text = arrayList[position].email
         Log.d("url", arrayList[position].url.toString())
-        Glide.with(context).load(arrayList[position].url)
-            .into(holder.imageProfile)
+        if (context != null) {
+            Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
+                .into(holder.imageProfile)
+        }
     }
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {

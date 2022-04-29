@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/space_72"
+                android:layout_marginTop="@dimen/space_12"
                 android:fontFamily="@font/semibold"
                 android:text="Student's Details"
                 android:textColor="@color/yellow"

@@ -50,8 +50,8 @@ class StudentListFragment : Fragment() {
                         arraylist.add(model!!)
                         Log.d("TAG", arraylist.toString())
                     }
-                    binding.rvList.adapter = DatabaseAdapter(requireContext(), arraylist)
-                    binding.progress.visibility = View.VISIBLE
+                    binding.rvList.adapter = DatabaseAdapter(context, arraylist)
+                    binding.progress.visibility = View.GONE
                 }
             }
 
