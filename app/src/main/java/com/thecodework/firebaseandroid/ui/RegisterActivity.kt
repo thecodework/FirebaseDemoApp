@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
             Log.d("TAG", "enter field")
             emailid = binding.edEmail.text.toString().trim()
             pass = binding.edPassword.text.toString().trim()
-            if (emailid.isEmpty() || pass.isEmpty() || pass.length < 5) {
+            if (emailid.isEmpty() || pass.isEmpty() || pass.length < 6) {
                 Toast.makeText(
                     this, "Enter Email & Password should be 6 character",
                     Toast.LENGTH_LONG
@@ -67,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
                 } else {
                     Log.d("TAG", "failed", task.exception)
                     Toast.makeText(
-                        baseContext, "Authentication failed.",
+                        baseContext, "Enter valid Email",
                         Toast.LENGTH_SHORT
                     ).show()
                     binding.progress.visibility = View.GONE
