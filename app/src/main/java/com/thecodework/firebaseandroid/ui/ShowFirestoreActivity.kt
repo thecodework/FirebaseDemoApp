@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.google.firebase.firestore.FirebaseFirestore
 import com.thecodework.firebaseandroid.R
+import com.thecodework.firebaseandroid.adapter.DatabaseAdapter
 import com.thecodework.firebaseandroid.adapter.FirestormsAdapter
 import com.thecodework.firebaseandroid.databinding.ActivityShowFirestoreBinding
 import com.thecodework.firebaseandroid.model.ModelDbshow
@@ -36,9 +37,15 @@ class ShowFirestoreActivity : AppCompatActivity() {
                 firestormsAdapter =
                     FirestormsAdapter(this@ShowFirestoreActivity, arraylist)
                 firestormsAdapter.notifyDataSetChanged()
-                binding.rvList.adapter = firestormsAdapter
-                binding.progress.visibility = View.GONE
+                if (arraylist.size > 0) {
+                    binding.rvList.adapter = firestormsAdapter
+                    binding.progress.visibility = View.GONE
+                    binding.tvEmpty.visibility = View.GONE
+                } else {
+                    binding.tvEmpty.visibility = View.VISIBLE
+                    binding.layoutlist.visibility = View.GONE
+                    binding.progress.visibility = View.GONE
+                }
             }
     }
-
 }

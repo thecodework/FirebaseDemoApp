@@ -60,7 +60,7 @@ class StudentFragment : Fragment() {
                 val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
                 ref?.putFile(filePath!!)?.addOnSuccessListener { taskSnapshot ->
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener {
-                        binding.imageProfile.setImageResource(R.drawable.ic_launcher_foreground)
+                        binding.imageProfile.setImageResource(R.drawable.profile)
                         val imageUrl = it.toString()
                         name = binding.edName.text.toString()
                         number = binding.edNumber.text.toString()

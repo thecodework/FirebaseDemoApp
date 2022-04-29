@@ -50,7 +50,14 @@ class StudentListFragment : Fragment() {
                         arraylist.add(model!!)
                         Log.d("TAG", arraylist.toString())
                     }
+                }
+                if (arraylist.size >0) {
                     binding.rvList.adapter = DatabaseAdapter(context, arraylist)
+                    binding.progress.visibility = View.GONE
+                    binding.tvEmpty.visibility = View.GONE
+                } else {
+                    binding.tvEmpty.visibility = View.VISIBLE
+                    binding.layoutlist.visibility = View.GONE
                     binding.progress.visibility = View.GONE
                 }
             }
