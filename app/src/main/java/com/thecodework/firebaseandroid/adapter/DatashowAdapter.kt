@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.model.ModelDbshow
 
 class DatashowAdapter(
     val context: Context,
-    val arrayList: ArrayList<ModelDbshow>
+    private val arrayList: ArrayList<ModelDbshow>
 ) :
     RecyclerView.Adapter<DatashowAdapter.myholder>() {
 
@@ -30,6 +32,8 @@ class DatashowAdapter(
         holder.tvNumber.text = arrayList[position].number
         holder.tvAddress.text = arrayList[position].address
         holder.tvEmail.text = arrayList[position].email
+        Glide.with(context).load(arrayList[position].image)
+            .into(holder.imageProfile)
     }
 
     class myholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,5 +41,6 @@ class DatashowAdapter(
         val tvNumber: TextView = itemView.findViewById(R.id.tvNumber)
         val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
         val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
+        val imageProfile: CircularImageView = itemView.findViewById(R.id.imageProfile)
     }
 }

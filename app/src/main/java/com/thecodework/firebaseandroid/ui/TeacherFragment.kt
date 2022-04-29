@@ -29,7 +29,7 @@ class TeacherFragment : Fragment() {
     lateinit var number: String
     lateinit var email: String
     lateinit var address: String
-    val PICK_IMAGE_REQUEST = 1
+    val imageRequest = 1
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
     private var filePath: Uri? = null
@@ -62,7 +62,7 @@ class TeacherFragment : Fragment() {
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(
                 Intent.createChooser(intent, "Select Picture"),
-                PICK_IMAGE_REQUEST
+                imageRequest
             )
         })
         binding.btnSave.setOnClickListener(View.OnClickListener {
@@ -73,11 +73,51 @@ class TeacherFragment : Fragment() {
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                         binding.progress.visibility = View.GONE
                         binding.imageProfile.setImageResource(R.drawable.ic_launcher_foreground)
-                        Toast.makeText(
-                            activity, "Save",
-                            Toast.LENGTH_LONG
-                        ).show()
-
+                        var imageUrl = it.toString()
+                        Log.d("TAG", "url$imageUrl")
+                        name = binding.edName.text.toString()
+                        number = binding.edNumber.text.toString()
+                        address = binding.edAddress.text.toString()
+                        email = binding.edEmail.text.toString()
+                        if (name.isEmpty() || number.isEmpty() || address.isEmpty() || email.isEmpty()) {
+                            Toast.makeText(
+                                activity, "Enter All Field",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            binding.progress.visibility = View.GONE
+                        } else {
+                            var hashMap: HashMap<String, String> = HashMap<String, String>()
+                            hashMap.put("name", name)
+                            hashMap.put("number", number)
+                            hashMap.put("address", address)
+                            hashMap.put("email", email)
+                            hashMap.put("url", imageUrl)
+                            FirebaseFirestore.getInstance().collection("users")
+                                .add(hashMap)
+                                .addOnSuccessListener { documentReference ->
+                                    Log.d(
+                                        ContentValues.TAG,
+                                        "DocumentSnapshot added with ID: ${documentReference.id}"
+                                    )
+                                    Toast.makeText(
+                                        activity, "Save",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    startActivity(
+                                        Intent(
+                                            activity,
+                                            ShowFirestore_Activity::class.java
+                                        )
+                                    )
+                                    binding.edName.text.clear()
+                                    binding.edNumber.text.clear()
+                                    binding.edAddress.text.clear()
+                                    binding.edEmail.text.clear()
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.d(ContentValues.TAG, "Error adding document", e)
+                                }
+                        }
                     }
                 }
 
@@ -92,49 +132,15 @@ class TeacherFragment : Fragment() {
 
             } else {
                 Toast.makeText(activity, "Please Upload an Image", Toast.LENGTH_SHORT).show()
+                binding.progress.visibility = View.GONE
             }
-            name = binding.edName.text.toString()
-            number = binding.edNumber.text.toString()
-            address = binding.edAddress.text.toString()
-            email = binding.edEmail.text.toString()
-            if (name.isEmpty() || number.isEmpty() || address.isEmpty() || email.isEmpty()) {
-                Toast.makeText(
-                    activity, "Enter All Field",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                var hashMap: HashMap<String, String> = HashMap<String, String>()
-                hashMap.put("name", name)
-                hashMap.put("number", number)
-                hashMap.put("address", address)
-                hashMap.put("email", email)
-                FirebaseFirestore.getInstance().collection("users")
-                    .add(hashMap)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d(
-                            ContentValues.TAG,
-                            "DocumentSnapshot added with ID: ${documentReference.id}"
-                        )
-                        Toast.makeText(
-                            activity, "Save",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        startActivity(Intent(activity, ShowFirestore_Activity::class.java))
-                        binding.edName.text.clear()
-                        binding.edNumber.text.clear()
-                        binding.edAddress.text.clear()
-                        binding.edEmail.text.clear()
-                    }
-                    .addOnFailureListener { e ->
-                        Log.d(ContentValues.TAG, "Error adding document", e)
-                    }
-            }
+
         })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+        if (requestCode == imageRequest && resultCode == Activity.RESULT_OK) {
             if (data == null || data.data == null) {
                 return
             }

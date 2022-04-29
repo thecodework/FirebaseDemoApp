@@ -22,7 +22,13 @@
         android:theme="@style/Theme.FirebaseAndroid">
         <activity
             android:name=".ui.BottomnavActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.SplashScreen_Activity"
             android:exported="true">
@@ -58,17 +64,16 @@
         <activity
             android:name=".ui.ShowFirestore_Activity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.FirestoreActivity"
             android:exported="true" />
         <activity android:name=".ui.ShowActivity" />
-        <activity android:name=".ui.HomeActivity" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true">
+        </activity>
         <activity android:name=".ui.RegisterActivity" />
 
         <service
