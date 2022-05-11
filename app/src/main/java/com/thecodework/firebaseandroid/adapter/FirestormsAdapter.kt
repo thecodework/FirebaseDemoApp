@@ -4,8 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.bumptech.glide.Glide
 import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
@@ -32,8 +35,13 @@ class FirestormsAdapter(
         holder.tvNumber.text = arrayList[position].number
         holder.tvAddress.text = arrayList[position].address
         holder.tvEmail.text = arrayList[position].email
-        Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
-            .into(holder.imageProfile)
+        holder.imageProfile.load(arrayList[position].url) {
+            crossfade(true)
+            placeholder(R.drawable.profile)
+            transformations(CircleCropTransformation())
+        }
+        /* Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
+             .into(holder.imageProfile)*/
     }
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -41,6 +49,6 @@ class FirestormsAdapter(
         val tvNumber: TextView = itemView.findViewById(R.id.tvNumber)
         val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
         val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
-        val imageProfile: CircularImageView = itemView.findViewById(R.id.imageProfile)
+        val imageProfile: ImageView = itemView.findViewById(R.id.imageProfile)
     }
 }
