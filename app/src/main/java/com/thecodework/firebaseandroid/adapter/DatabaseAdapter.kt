@@ -5,8 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.bumptech.glide.Glide
 import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
@@ -35,8 +38,13 @@ class DatabaseAdapter(
         holder.tvEmail.text = arrayList[position].email
         Log.d("url", arrayList[position].url.toString())
         if (context != null) {
-            Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
-                .into(holder.imageProfile)
+            /* Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
+                 .into(holder.imageProfile)*/
+            holder.imageProfile.load(arrayList[position].url) {
+                crossfade(true)
+                placeholder(R.drawable.profile)
+                transformations(CircleCropTransformation())
+            }
         }
     }
 
@@ -45,6 +53,6 @@ class DatabaseAdapter(
         val tvNumber: TextView = itemView.findViewById(R.id.tvNumber)
         val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
         val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
-        val imageProfile: CircularImageView = itemView.findViewById(R.id.imageProfile)
+        val imageProfile: ImageView = itemView.findViewById(R.id.imageProfile)
     }
 }

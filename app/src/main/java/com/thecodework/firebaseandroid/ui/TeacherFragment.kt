@@ -55,15 +55,6 @@ class TeacherFragment : Fragment() {
     }
 
     private fun setClickListener() {
-        binding.tvUpload.setOnClickListener(View.OnClickListener {
-            val intent = Intent()
-            intent.type = "image/*"
-            intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(
-                Intent.createChooser(intent, "Select Picture"),
-                imageRequest
-            )
-        })
         binding.btnSave.setOnClickListener(View.OnClickListener {
             binding.progress.visibility = View.VISIBLE
             if (filePath != null) {
@@ -71,7 +62,7 @@ class TeacherFragment : Fragment() {
                 ref?.putFile(filePath!!)?.addOnSuccessListener { taskSnapshot ->
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                         binding.progress.visibility = View.GONE
-                        binding.imageProfile.setImageResource(R.drawable.ic_launcher_foreground)
+                        binding.imageProfile.setImageResource(R.drawable.profile)
                         var imageUrl = it.toString()
                         Log.d("TAG", "url$imageUrl")
                         name = binding.edName.text.toString()
@@ -79,42 +70,66 @@ class TeacherFragment : Fragment() {
                         address = binding.edAddress.text.toString()
                         email = binding.edEmail.text.toString()
                         if (name.isEmpty() || number.isEmpty() || address.isEmpty() || email.isEmpty()) {
+                            Log.d(
+                                "TAG",
+                                "Enter if"
+                            )
                             Toast.makeText(
                                 activity, "Enter All Field",
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.progress.visibility = View.GONE
                         } else {
-                            var hashMap: HashMap<String, String> = HashMap<String, String>()
+                            Log.d(
+                                "TAG",
+                                "1"
+                            )
+                            val hashMap: HashMap<String, String> = HashMap<String, String>()
                             hashMap.put("name", name)
                             hashMap.put("number", number)
                             hashMap.put("address", address)
                             hashMap.put("email", email)
                             hashMap.put("url", imageUrl)
+                            Log.d(
+                                "TAG",
+                                "2"
+                            )
                             FirebaseFirestore.getInstance().collection("users")
                                 .add(hashMap)
                                 .addOnSuccessListener { documentReference ->
                                     Log.d(
-                                        ContentValues.TAG,
+                                        "TAG",
                                         "DocumentSnapshot added with ID: ${documentReference.id}"
                                     )
                                     Toast.makeText(
                                         activity, "Save",
                                         Toast.LENGTH_LONG
                                     ).show()
+                                    Log.d(
+                                        "TAG",
+                                        "Save data"
+                                    )
                                     startActivity(
                                         Intent(
-                                            activity,
+                                            context,
                                             ShowFirestoreActivity::class.java
                                         )
+                                    )
+                                    Log.d(
+                                        "TAG",
+                                        "3"
                                     )
                                     binding.edName.text.clear()
                                     binding.edNumber.text.clear()
                                     binding.edAddress.text.clear()
                                     binding.edEmail.text.clear()
+                                    Log.d(
+                                        "TAG",
+                                        "4"
+                                    )
                                 }
                                 .addOnFailureListener { e ->
-                                    Log.d(ContentValues.TAG, "Error adding document", e)
+                                    Log.d("TAG", "Error adding document", e)
                                 }
                         }
                     }
@@ -134,6 +149,15 @@ class TeacherFragment : Fragment() {
                 binding.progress.visibility = View.GONE
             }
 
+        })
+        binding.tvUpload.setOnClickListener(View.OnClickListener {
+            val intent = Intent()
+            intent.type = "image/*"
+            intent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(
+                Intent.createChooser(intent, "Select Picture"),
+                imageRequest
+            )
         })
     }
 
