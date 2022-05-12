@@ -3,7 +3,6 @@ package com.thecodework.firebaseandroid.adapter
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -11,10 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.request.CachePolicy
-import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
-import com.bumptech.glide.Glide
-import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.model.ModelDbshow
 

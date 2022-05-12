@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
-import com.bumptech.glide.Glide
-import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.model.ModelDbshow
 
