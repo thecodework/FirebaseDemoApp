@@ -3,13 +3,16 @@ package com.thecodework.firebaseandroid.adapter
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.request.CachePolicy
 import coil.transform.CircleCropTransformation
+import coil.transform.RoundedCornersTransformation
 import com.bumptech.glide.Glide
 import com.mikhaellopez.circularimageview.CircularImageView
 import com.thecodework.firebaseandroid.R
@@ -38,12 +41,11 @@ class DatabaseAdapter(
         holder.tvEmail.text = arrayList[position].email
         Log.d("url", arrayList[position].url.toString())
         if (context != null) {
-            /* Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
-                 .into(holder.imageProfile)*/
             holder.imageProfile.load(arrayList[position].url) {
                 crossfade(true)
                 placeholder(R.drawable.profile)
-                transformations(CircleCropTransformation())
+                memoryCachePolicy(CachePolicy.ENABLED)
+                transformations(RoundedCornersTransformation(20f))
             }
         }
     }

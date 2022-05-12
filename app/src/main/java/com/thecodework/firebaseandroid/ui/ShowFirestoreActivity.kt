@@ -1,16 +1,14 @@
 package com.thecodework.firebaseandroid.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.thecodework.firebaseandroid.R
-import com.thecodework.firebaseandroid.adapter.DatabaseAdapter
 import com.thecodework.firebaseandroid.adapter.FirestormsAdapter
 import com.thecodework.firebaseandroid.databinding.ActivityShowFirestoreBinding
 import com.thecodework.firebaseandroid.model.ModelDbshow
 import com.thecodework.firebaseandroid.util.Utils
-import java.util.ArrayList
 
 class ShowFirestoreActivity : AppCompatActivity() {
     lateinit var binding: ActivityShowFirestoreBinding

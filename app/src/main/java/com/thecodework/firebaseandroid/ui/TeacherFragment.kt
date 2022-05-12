@@ -1,18 +1,16 @@
 package com.thecodework.firebaseandroid.ui
 
 import android.app.Activity
-import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.google.android.gms.tasks.OnFailureListener
+import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -20,7 +18,6 @@ import com.thecodework.firebaseandroid.R
 import com.thecodework.firebaseandroid.databinding.FragmentTeacherBinding
 import java.io.IOException
 import java.util.*
-import kotlin.collections.HashMap
 
 class TeacherFragment : Fragment() {
     private lateinit var binding: FragmentTeacherBinding
@@ -28,7 +25,7 @@ class TeacherFragment : Fragment() {
     lateinit var number: String
     lateinit var email: String
     lateinit var address: String
-    val imageRequest = 1
+    private val imageRequest = 1
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
     private var filePath: Uri? = null
@@ -42,7 +39,7 @@ class TeacherFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTeacherBinding.inflate(inflater, container, false)
         initializer()
         setClickListener()
@@ -55,7 +52,7 @@ class TeacherFragment : Fragment() {
     }
 
     private fun setClickListener() {
-        binding.btnSave.setOnClickListener(View.OnClickListener {
+        binding.btnSave.setOnClickListener {
             binding.progress.visibility = View.VISIBLE
             if (filePath != null) {
                 val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
@@ -63,7 +60,7 @@ class TeacherFragment : Fragment() {
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                         binding.progress.visibility = View.GONE
                         binding.imageProfile.setImageResource(R.drawable.profile)
-                        var imageUrl = it.toString()
+                        val imageUrl = it.toString()
                         Log.d("TAG", "url$imageUrl")
                         name = binding.edName.text.toString()
                         number = binding.edNumber.text.toString()
@@ -129,19 +126,23 @@ class TeacherFragment : Fragment() {
                                     )
                                 }
                                 .addOnFailureListener { e ->
+                                    Toast.makeText(
+                                        activity, "Error" + e.message,
+                                        Toast.LENGTH_LONG
+                                    ).show()
                                     Log.d("TAG", "Error adding document", e)
                                 }
                         }
                     }
                 }
 
-                    ?.addOnFailureListener(OnFailureListener { e ->
+                    ?.addOnFailureListener { e ->
                         Toast.makeText(
                             activity, e.message,
                             Toast.LENGTH_LONG
                         ).show()
                         Log.d("TAG", e.message.toString())
-                    })
+                    }
 
 
             } else {
@@ -149,8 +150,8 @@ class TeacherFragment : Fragment() {
                 binding.progress.visibility = View.GONE
             }
 
-        })
-        binding.tvUpload.setOnClickListener(View.OnClickListener {
+        }
+        binding.tvUpload.setOnClickListener {
             val intent = Intent()
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
@@ -158,7 +159,7 @@ class TeacherFragment : Fragment() {
                 Intent.createChooser(intent, "Select Picture"),
                 imageRequest
             )
-        })
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

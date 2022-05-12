@@ -40,8 +40,6 @@ class FirestormsAdapter(
             placeholder(R.drawable.profile)
             transformations(CircleCropTransformation())
         }
-        /* Glide.with(context).load(arrayList[position].url).placeholder(R.drawable.profile)
-             .into(holder.imageProfile)*/
     }
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
